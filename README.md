@@ -65,6 +65,21 @@ In a software project like this AirBnB Clone, multiple roles work together to en
 - Designs and integrates smart features like recommendation systems or chatbots.
 - Trains, tests, and deploys machine learning models.
 - Works closely with backend developers to integrate AI into the platform.
+## 🛠 Technology Stack
+
+Below is the list of technologies used in this project and their purposes:
+
+| Technology       | Purpose                                                                 |
+|------------------|-------------------------------------------------------------------------|
+| **FastAPI**      | A high-performance Python web framework for building RESTful APIs.      |
+| **Python**       | Core programming language used for backend logic and scripting.         |
+| **SQLModel**     | ORM (Object Relational Mapper) to interact with the database using Python classes. |
+| **PostgreSQL**   | Relational database used to store user data, listings, and bookings.    |
+| **Uvicorn**      | ASGI server to run the FastAPI application with high performance.       |
+| **Docker**       | Containerization tool to standardize development and deployment.        |
+| **Git & GitHub** | Version control and collaboration for managing the project codebase.    |
+| **OpenAI API** *(optional)* | Used for AI-based features like generating text or smart recommendations. |
+
 
 > Source: Inspired by [ITRexGroup blog on software development roles](https://itrexgroup.com/blog/software-development-team-structure/)
 
