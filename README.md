@@ -131,6 +131,78 @@ For this project, setting up a CI/CD pipeline will help:
 - **Render / Railway**: Cloud platforms to host and manage deployments easily.
 
 Implementing CI/CD will improve development efficiency, reduce bugs, and enable faster delivery of new features.
+## 🗃️ Database Design
+
+The AirBnB Clone project includes several key entities to support users, listings, bookings, and payments. Below are the main entities, their important fields, and how they relate to each other.
+
+### 👤 Users
+Represents the platform's users (guests and hosts).
+- `id`: Unique identifier
+- `username`: User's display name
+- `email`: Email address
+- `hashed_password`: Securely stored password
+- `role`: Either `guest`, `host`, or `admin`
+
+🔁 A user can have **multiple properties** and **multiple bookings**.
+
+---
+
+### 🏠 Properties
+Represents the properties listed for rent by hosts.
+- `id`: Unique identifier
+- `title`: Name of the property
+- `description`: Text describing the property
+- `location`: City or country
+- `price_per_night`: Price for booking one night
+
+🔁 A property belongs to **one user (host)**, and can have **many bookings** and **many reviews**.
+
+---
+
+### 📅 Bookings
+Represents reservations made by guests.
+- `id`: Unique identifier
+- `user_id`: ID of the guest who booked
+- `property_id`: ID of the property booked
+- `start_date`: Date the booking starts
+- `end_date`: Date the booking ends
+
+🔁 A booking belongs to **one user** and **one property**.
+
+---
+
+### ⭐ Reviews *(Optional for later stage)*
+Captures guest feedback after a stay.
+- `id`: Unique identifier
+- `user_id`: ID of the guest who left the review
+- `property_id`: Reviewed property
+- `rating`: Star rating (1–5)
+- `comment`: Text feedback
+
+🔁 A review belongs to **one user** and **one property**.
+
+---
+
+### 💳 Payments *(Optional or planned)*
+Represents payment transactions for bookings.
+- `id`: Unique identifier
+- `booking_id`: Related booking
+- `amount`: Total payment
+- `status`: Paid, Pending, Failed
+- `timestamp`: Date and time of transaction
+
+🔁 A payment is tied to **one booking**, which is tied to **one user and one property**.
+
+---
+
+## 📊 Entity Relationships Summary
+
+- One **User** ↔️ many **Properties**
+- One **User** ↔️ many **Bookings**
+- One **Property** ↔️ many **Bookings**
+- One **Property** ↔️ many **Reviews**
+- One **Booking** ↔️ one **Payment**
+
 
 
 
